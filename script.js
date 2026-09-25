@@ -1,52 +1,71 @@
 const scenes=[
-{t:"คุณตื่นขึ้นมาในห้องที่ไม่รู้จัก\nนาฬิกาหยุดอยู่ที่ 03:17\nหน้าต่างเปิดรับลมเย็น ทั้งที่คุณจำได้ว่าปิดมันก่อนนอน\n\nบนโต๊ะมีของสามอย่าง",c:[
-["กุญแจที่ขึ้นสนิม — อย่างน้อยมันก็ยังไขอะไรบางอย่างได้",{courage:2,curiosity:1}],
-["จดหมายที่เขียนชื่อคุณ — ทั้งที่ลายมือไม่คุ้น",{tenderness:2,memory:1}],
-["ขนมหมดอายุไปแล้วสี่ปี — แต่กลิ่นยังดีอยู่",{chaos:2,play:1}]]},
-{t:"ประตูปรากฏขึ้นตรงหน้า\nเหมือนมันรอคุณมานานแล้ว\nมีเสียงเบามากจากอีกฝั่ง",c:[
-["เปิดทันที — ความกลัวค่อยว่ากันทีหลัง",{courage:2,curiosity:1}],
-["เอาหูแนบประตู — อยากรู้ว่าใครอยู่ข้างใน",{curiosity:2,tenderness:1}],
-["เคาะสามครั้ง แล้วรอให้โลกตอบกลับ",{patience:2,curiosity:1}]]},
-{t:"หลังประตูคือทางเดินยาว\nภาพวาดบนผนังเป็นคนแปลกหน้า\nแต่ทุกคนในภาพกำลังมองมาที่คุณ\n\nสุดทางมีแสงสีอุ่นเล็ก ๆ",c:[
-["เดินตามแสง",{courage:2,hope:1}],
-["หยุดดูภาพวาด",{curiosity:2,tenderness:1}],
-["หันกลับไปดูว่าประตูยังอยู่ไหม",{memory:2,patience:1}]]},
-{t:"ภาพหนึ่งดึงสายตาคุณไว้\nเป็นเก้าอี้ว่างใต้หน้าต่าง\nมีเงาคนตกกระทบพื้น แต่ไม่มีคนอยู่\n\nด้านล่างเขียนว่า “สิ่งที่หายไป ไม่ได้แปลว่าไม่เคยอยู่”",c:[
-["จำภาพนั้นไว้ โดยไม่ต้องหาคำอธิบาย",{memory:2,tenderness:1}],
-["เขียนประโยคใหม่ทับลงไป",{play:1,courage:1,curiosity:1}],
-["วาดหน้าต่างเพิ่มอีกบาน",{art:2,play:1}]]},
-{t:"ข้างแสงมีเก้าอี้หนึ่งตัว\nบนที่นั่งวางกระดาษเปล่าไว้\n\nคุณรู้สึกว่า ถ้านั่งลง ทุกอย่างอาจเงียบไปสักครู่",c:[
-["นั่งลง — ไม่ต้องทำอะไรสักพักก็ได้",{patience:2,tenderness:1}],
-["เขียนชื่อของตัวเองลงบนกระดาษ",{courage:1,memory:1,tenderness:1}],
-["พับกระดาษเป็นเรือ แล้วปล่อยมันไปตามลม",{play:2,hope:1}]]},
-{t:"มีเสียงหัวเราะเบา ๆ จากปลายทางเดิน\nตั้งแต่เข้ามา คุณยังไม่ได้ยินเสียงของตัวเองเลย",c:[
-["พูดว่า “ฉันอยู่นี่”",{courage:2,tenderness:1}],
-["เงียบต่อ — อยากรู้ว่าใครจะพูดก่อน",{patience:2,curiosity:1}],
-["หัวเราะกลับไปหนึ่งครั้ง",{play:2,courage:1}]]},
-{t:"คุณมาถึงห้องสีขาว\nไม่มีประตู ไม่มีหน้าต่าง\nมีเพียงคำถามบนผนัง\n\n“ถ้าไม่มีใครเห็น คุณยังอยากทำสิ่งนี้อยู่ไหม”",c:[
-["ใช่ — เพราะฉันยังอยากทำอยู่",{courage:2,art:1}],
-["ไม่รู้ — ขอคิดอีกหน่อย",{patience:2,curiosity:1}],
-["ฉันอยากทำสิ่งอื่นมากกว่า",{play:1,art:2,hope:1}]]},
-{t:"ก่อนกลับ คุณพบกระดาษใต้เก้าอี้\n\n“ไม่ต้องเอาคำตอบกลับไปก็ได้\nเอาสิ่งที่เปลี่ยนคำถามกลับไปก็พอ”\n\nคุณจะทิ้งอะไรไว้ที่นี่",c:[
-["ความกลัว",{courage:2,hope:1}],
-["ความทรงจำบางส่วน",{memory:2,patience:1}],
-["ความจำเป็นต้องรู้ทุกอย่าง",{curiosity:2,patience:1}]]}
+{t:"คุณตื่นขึ้นมาในห้องที่ไม่รู้จัก\\nนาฬิกาหยุดอยู่ที่ 03:17\\nหน้าต่างเปิดรับลม ทั้งที่คุณจำได้ว่าปิดมันก่อนนอน\\n\\nบนโต๊ะมีของสามอย่าง",c:[
+["กุญแจสนิม — ของที่ดูเหมือนเคยเปิดบางอย่าง",{item:"key",f:{key:1},c:{courage:1,curiosity:1}}],
+["จดหมายที่เขียนชื่อคุณ — ลายมือเหมือนคนที่คุณเคยรู้จัก",{item:"letter",f:{readLetter:1},c:{memory:1,tenderness:1}}],
+["ขนมหมดอายุสี่ปี — กลิ่นยังดีอย่างน่าสงสัย",{item:"snack",f:{snack:1},c:{play:1}}]]},
+{t:"ประตูปรากฏขึ้นตรงหน้า\\nมันไม่มีมือจับจากด้านนี้\\nจากอีกฝั่งมีเสียงถามเบา ๆ\\n\\n“คุณยังจำได้ไหม?”",c:[
+["เปิดทันที",{f:{door:1},c:{courage:2}}],
+["เอาหูแนบประตู แล้วถามว่า “จำอะไร?”",{f:{listen:1},c:{curiosity:2,tenderness:1}}],
+["เคาะสามครั้ง แล้วรอ",{f:{knock:1},c:{patience:2}}]]},
+{t:"หลังประตูเป็นร้านถ่ายรูปเล็ก ๆ\\nไม่มีคนเฝ้า\\nในรูปหนึ่ง คุณกำลังยืนอยู่ในห้องนี้\\nด้านหลังรูปเขียนว่า “ถ่ายเมื่อ 11 ปีก่อน”",c:[
+["เอารูปใบนั้นกลับไป",{item:"photo",f:{photo:1},c:{memory:2}}],
+["พลิกดูด้านหลังให้ละเอียด",{f:{photoBack:1},c:{curiosity:2}}],
+["วางมันไว้ที่เดิม เพราะบางอย่างไม่ควรถูกพากลับไป",{f:{leavePhoto:1},c:{patience:1,tenderness:2}}]]},
+{t:"ทางแยกสามทาง\\nป้ายหนึ่งเขียนว่า “ทางกลับ”\\nอีกป้าย “ทางที่ยังไม่เกิดขึ้น”\\nป้ายสุดท้ายถูกขีดทิ้งจนอ่านไม่ออก",c:[
+["ไปทางกลับ",{f:{back:1},c:{memory:1}}],
+["ไปทางที่ยังไม่เกิดขึ้น",{f:{future:1},c:{hope:2}}],
+["เดินตามป้ายที่ถูกขีดทิ้ง",{f:{wrong:1},c:{curiosity:1,play:1}}]]},
+{t:"ห้องพักเล็ก ๆ มีเก้าอี้และกระจก\\nในกระจก คุณเห็นตัวเองช้ากว่าความจริงสามวินาที\\nแล้วเงาในกระจกยกมือขึ้นก่อนคุณ",c:[
+["ยกมือตามมัน",{f:{mirror:1},c:{curiosity:1,art:1}}],
+["ถามเงาว่า “เธออยากได้อะไร?”",{f:{mirrorTalk:1},c:{tenderness:2}}],
+["ทุบกระจก",{f:{mirrorBreak:1},c:{courage:2}}]]},
+{t:"ถ้าคุณเก็บจดหมายไว้ คุณพบข้อความใหม่ด้านใน:\\n“ถ้าเจอคนที่จำคุณได้ก่อนคุณจำเขาได้ อย่ารีบถามว่าเขาเป็นใคร”\\nถ้าไม่ได้เก็บจดหมาย คุณพบเพียงกระดาษเปล่า",c:[
+["เขียนชื่อใครสักคนลงบนกระดาษ",{f:{nameWrite:1},c:{memory:1}}],
+["พับกระดาษเป็นเรือ",{item:"boat",f:{boat:1},c:{play:2,hope:1}}],
+["ฉีกกระดาษทิ้ง แล้วดูว่ามีอะไรอยู่ข้างใต้",{f:{underPaper:1},c:{curiosity:2}}]]},
+{t:"โทรศัพท์สีดำดังขึ้นเพียงครั้งเดียว\\nหน้าจอขึ้นเวลา 03:17\\nถ้าคุณรับสาย จะได้ยินเสียงของตัวเองพูดว่า\\n“อย่าไว้ใจตอนจบ”",c:[
+["รับสาย",{f:{phone:1},c:{courage:1,curiosity:2}}],
+["ปล่อยให้มันดังหายไป",{f:{ignorePhone:1},c:{patience:2}}],
+["โทรกลับหาตัวเอง",{f:{callBack:1},c:{play:2,art:1}}]]},
+{t:"เด็กคนหนึ่งนั่งอยู่บนพื้น ถือของชิ้นหนึ่งที่คุณเคยเห็น\\nเขาถามว่า “ของชิ้นนี้เป็นของคุณหรือเปล่า?”",c:[
+["ตอบว่าใช่",{f:{claim:1},c:{memory:1}}],
+["ตอบว่าไม่รู้",{f:{unsure:1},c:{patience:1,curiosity:1}}],
+["ถามกลับว่า “แล้วของนายอยู่ไหน?”",{f:{askChild:1},c:{tenderness:2,curiosity:1}}]]},
+{t:"เหนือประตูสีขาวมีคำถามเดียว\\n“ถ้าคุณรู้ว่าการกลับออกไปจะทำให้คุณลืมทุกอย่างที่เกิดขึ้นที่นี่ คุณยังจะกลับไหม?”",c:[
+["กลับ — ฉันไม่จำเป็นต้องจำทุกอย่าง",{f:{leave:1},c:{hope:1,tenderness:1}}],
+["ไม่กลับ — ฉันอยากรู้ให้หมด",{f:{stay:1},c:{curiosity:2}}],
+["ขอเปิดประตูอีกบานก่อน",{f:{anotherDoor:1},c:{play:1,art:2}}]]},
+{t:"โต๊ะตัวเดิมจากห้องแรกกลับมาอีกครั้ง\\nกุญแจ จดหมาย ขนม และรูปถ่ายวางเรียงกัน\\nมีของอีกชิ้นที่ไม่เคยอยู่ตรงนั้น: กุญแจอีกดอก\\nป้ายเขียนว่า “ของคุณ เมื่อครั้งที่แล้ว”",c:[
+["หยิบกุญแจดอกใหม่",{item:"oldKey",f:{oldKey:1},c:{memory:1,curiosity:1}}],
+["ทิ้งทุกอย่างไว้ แล้วเดินออก",{f:{release:1},c:{hope:2}}],
+["หยิบของที่ตัวเองเคยทิ้งไว้กลับมาด้วย",{f:{returnItem:1},c:{courage:1,play:1}}]]},
+{t:"คุณกลับมาถึงห้องแรก\\nนาฬิกายังเป็น 03:17 แต่ตอนนี้คุณรู้แล้วว่ามันไม่ได้หยุด\\nมันกำลังรอ\\nประตูที่คุณเข้ามาหายไป เหลือเพียงหน้าต่าง",c:[
+["ถามว่า “ฉันเคยมาที่นี่แล้วใช่ไหม?”",{f:{askFinal:1},c:{curiosity:2,memory:1}}],
+["พูดว่า “ถ้าอย่างนั้นก็เริ่มใหม่”",{f:{restart:1},c:{hope:2,play:1}}],
+["ไม่ถามอะไรเลย",{f:{silentFinal:1},c:{patience:2,tenderness:1}}]]},
+{t:"บนกระจกมีข้อความปรากฏขึ้น\\n“สิ่งที่คุณเลือกมาตลอดทางไม่ได้บอกว่าคุณเป็นคนแบบไหน\\nมันบอกว่า เมื่อไม่มีใครมอง คุณเลือกปฏิบัติต่อสิ่งที่อยู่ตรงหน้าอย่างไร”\\n\\nคุณเอามือแตะกระจก มันอุ่น",c:[
+["แตะต่อ",{f:{touch:1},c:{tenderness:1}}],
+["ถอนมือ",{f:{withdraw:1},c:{courage:1}}],
+["เคาะกระจกสามครั้ง",{f:{knockGlass:1},c:{curiosity:1,play:1}}]]}
 ];
-const results={
-courage:["คนที่เดินต่อทั้งที่ยังไม่แน่ใจ","บางครั้งความกล้าไม่ได้หน้าตาเหมือนคนไม่กลัว\nมันอาจเป็นแค่คนธรรมดาที่รู้ว่า กลัวแล้วก็ยังไปได้\n\nคุณไม่ได้ต้องการแผนที่ทั้งใบก่อนออกเดิน\nคุณต้องการแค่เหตุผลเล็ก ๆ ว่า “ลองดูไหม”"],
-curiosity:["คนที่ชอบเปิดวงเล็บให้โลก","คุณไม่ค่อยยอมให้เรื่องหนึ่งจบลงง่าย ๆ\nเพราะทุกคำตอบมักมีคำถามตัวเล็กซ่อนอยู่ข้างใน\n\nคุณไม่ได้หลงทาง\nคุณแค่เดินอ้อมเพื่อดูว่ามุมอื่นของโลกหน้าตาเป็นอย่างไร"],
-memory:["นักสะสมสิ่งที่ไม่มีรูปทรง","คุณพกอดีตไว้ในกระเป๋าที่คนอื่นมองไม่เห็น\nเสียงหัวเราะหนึ่งครั้ง กลิ่นฝนหนึ่งคืน หรือชื่อของใครบางคน\n\nบางอย่างถูกเก็บไว้เพียงเพื่อยืนยันว่า ครั้งหนึ่งมันเคยเกิดขึ้นจริง"],
-tenderness:["คนที่มองโลกเบาลงนิดหนึ่ง","คุณสังเกตสิ่งเล็ก ๆ ที่คนอื่นอาจเดินผ่าน\nเสียงที่เบาลง สีหน้าที่เปลี่ยนไป หรือเก้าอี้ที่ถูกเลื่อนออกจากโต๊ะ\n\nคุณอาจไม่ได้แก้ทุกอย่างได้\nแต่คุณทำให้บางอย่างรู้สึกว่าไม่ได้อยู่ลำพัง"],
-patience:["คนที่รู้ว่าบางภาพต้องดูนาน","คุณไม่จำเป็นต้องรีบตั้งชื่อให้ทุกสิ่ง\nบางความรู้สึกควรนั่งอยู่ข้างเราไปก่อน\n\nการรอของคุณไม่ใช่ความว่างเปล่า\nมันคือพื้นที่"],
-art:["คนที่ชอบเติมหน้าต่างให้กำแพง","คุณมีนิสัยแปลกในการเห็นความเป็นไปได้ในของที่ยังไม่เสร็จ\nของที่พังไม่ได้ทำให้คุณหยุดมอง\n\nตรงรอยร้าวนั่นเองที่แสงชอบเข้ามา"],
-hope:["คนที่ยังเผื่อที่ไว้ให้พรุ่งนี้","คุณไม่ได้มองโลกสวยตลอดเวลา\nคุณแค่ไม่ยอมปิดหน้าต่างทุกบานพร้อมกัน\n\nความหวังของคุณไม่ใช่เสียงดัง\nมันเหมือนไฟดวงเล็กที่เปิดทิ้งไว้ในห้องหนึ่ง"],
-play:["คนที่ยังเล่นกับความจริงได้","คุณจริงจังกับชีวิตพอที่จะไม่จริงจังกับมันตลอดเวลา\nบางครั้งคำตอบที่ดีเริ่มจากการเลือกขนมหมดอายุ\n\nคุณไม่ได้หนีจากความจริง คุณแค่ขอเปลี่ยนมุมกล้อง"]
+
+const endings={
+loop:["คนที่กลับมาถึงที่เดิมโดยไม่เหมือนเดิม","นาฬิกาเปลี่ยนจาก 03:17 เป็น 03:18\\nแล้วไฟในห้องก็ดับลง\\n\\nบนโต๊ะมีจดหมายฉบับใหม่เขียนด้วยลายมือของคุณเอง:\\n“รอบนี้ลองเลือกสิ่งที่คุณไม่เคยเลือกดู”\\n\\nคุณหัวเราะเบา ๆ เพราะเพิ่งรู้ว่าเกมนี้อาจไม่ได้เริ่มคืนนี้เป็นครั้งแรก"],
+memory:["นักเก็บหลักฐานของสิ่งที่ไม่มีใครเห็น","คุณออกมาพร้อมรูปถ่ายหนึ่งใบ\\nในรูปไม่มีคุณอยู่แล้ว มีเพียงเก้าอี้ว่างกับไฟดวงเล็ก\\n\\nด้านหลังรูปเขียนว่า “ขอบคุณที่จำแทนเรา”\\n\\nบางความทรงจำไม่ได้มีไว้ย้อนกลับไป มันมีไว้เพื่อพิสูจน์ว่าเรายังเดินต่อมาได้"],
+mirror:["คนที่ยอมคุยกับตัวเองจนถึงที่สุด","เงาในกระจกไม่ได้ตามคุณออกมา\\nมันเพียงยืนอยู่ตรงนั้นและยิ้ม\\n\\nก่อนกระจกจะกลับมาเป็นกระจกธรรมดา มันขยับปากเป็นคำว่า\\n“คราวหน้าไม่ต้องกลัวฉันก็ได้”"],
+hope:["คนที่ทิ้งไฟไว้ให้ตัวเองกลับมา","คุณเปิดประตูออก ข้างนอกไม่มีทางเดิน ไม่มีห้อง ไม่มีคำตอบ\\nมีเพียงเช้าวันใหม่\\n\\nคุณไม่รู้ว่าทุกอย่างเกิดขึ้นจริงหรือไม่ แต่เมื่อกลับถึงบ้าน คุณเปิดไฟไว้หนึ่งดวง เผื่อใครบางคนที่ยังหาทางกลับไม่เจอ"],
+strange:["คนที่เลือกประตูที่เกมไม่ได้วาดไว้","กำแพงข้างหลังคุณเปิดออกเป็นรอยแยกเล็ก ๆ\\nไม่มีใครเขียนมันไว้ในแผนที่\\n\\nคุณเดินเข้าไปและพบโต๊ะตัวหนึ่งที่มีป้ายชื่อว่า\\n“สำหรับคนที่ไม่เชื่อว่ามีแค่ตอนจบเดียว”\\n\\nบนโต๊ะมีเกมอีกเกมหนึ่งวางอยู่"],
+tender:["คนที่ทิ้งที่ว่างไว้ให้บางสิ่ง","คุณออกจากห้องโดยไม่เอาของกลับไปสักชิ้น\\nแต่เมื่อถึงบ้าน คุณพบกลิ่นขนมเก่า ๆ ในห้องครัว\\n\\nไม่มีใครอยู่ ไม่มีอะไรหาย\\n\\nคุณยิ้ม และไม่ได้พยายามหาคำอธิบาย"],
+default:["คนที่ไม่ยอมให้คำตอบจบเรื่อง","คุณออกมาพร้อมคำตอบที่ไม่ค่อยเหมือนคำตอบ\\n\\nบางทีสิ่งที่เปลี่ยนคุณไม่ใช่ประตูที่เปิด แต่เป็นสิ่งเล็ก ๆ ที่คุณเลือกจะไม่เดินผ่าน\\n\\n03:18\\nคราวนี้นาฬิกาเดินต่อแล้ว"]
 };
-let i=0,scores={};
-function reset(){i=0;scores={courage:0,curiosity:0,memory:0,tenderness:0,patience:0,art:0,hope:0,play:0};}
+
+let i=0,scores={courage:0,curiosity:0,memory:0,tenderness:0,patience:0,art:0,hope:0,play:0},bag=[],flags={};
 const story=document.querySelector("#story"),intro=document.querySelector(".intro"),result=document.querySelector("#result");
-function render(){document.querySelector("#count").textContent=String(i+1).padStart(2,"0")+" / "+String(scenes.length).padStart(2,"0");document.querySelector("#scene").textContent=scenes[i].t;const box=document.querySelector("#choices");box.innerHTML="";scenes[i].c.forEach(([label,add])=>{const b=document.createElement("button");b.className="choice";b.textContent=label;b.onclick=()=>pick(add);box.appendChild(b)});}
-function pick(add){Object.entries(add).forEach(([k,v])=>scores[k]+=v);if(i<scenes.length-1){i++;render()}else{const key=Object.keys(scores).sort((a,b)=>scores[b]-scores[a])[0],r=results[key];document.querySelector("#resultTitle").textContent=r[0];document.querySelector("#resultText").textContent=r[1];story.classList.add("hidden");result.classList.remove("hidden");}}
-document.querySelector("#start").onclick=()=>{reset();intro.classList.add("hidden");story.classList.remove("hidden");render()};
+function reset(){i=0;scores={courage:0,curiosity:0,memory:0,tenderness:0,patience:0,art:0,hope:0,play:0};bag=[];flags={};}
+function inventory(){let el=document.querySelector("#inventory");if(!el){el=document.createElement("div");el.id="inventory";el.className="inventory";story.prepend(el)}el.innerHTML="<span>POCKET</span>"+(bag.length?bag.map(x=>"<b>"+x+"</b>").join(""):"<b>ว่างเปล่า</b>")}
+function render(){document.querySelector("#count").textContent=String(i+1).padStart(2,"0")+" / "+String(scenes.length).padStart(2,"0");document.querySelector("#scene").textContent=scenes[i].t;const bar=document.querySelector(".progress-line i");if(bar)bar.style.width=((i+1)/scenes.length*100)+"%";inventory();const box=document.querySelector("#choices");box.innerHTML="";scenes[i].c.forEach(([label,add])=>{const b=document.createElement("button");b.className="choice";b.textContent=label;b.onclick=()=>pick(add);box.appendChild(b)})}
+function pick(add){if(add.item&&!bag.includes(add.item))bag.push(add.item);if(add.f)Object.assign(flags,add.f);if(add.c)Object.entries(add.c).forEach(([k,v])=>scores[k]+=v);if(i<scenes.length-1){i++;render()}else finish()}
+function finish(){let key="default";if(flags.askFinal&&flags.oldKey)key="loop";else if(flags.mirrorTalk||flags.mirrorBreak)key="mirror";else if(flags.photo||flags.photoBack||flags.claim)key="memory";else if(flags.leave||flags.release||flags.restart)key="hope";else if(flags.anotherDoor||flags.callBack||flags.wrong)key="strange";else if(flags.askChild||flags.touch)key="tender";const r=endings[key];document.querySelector("#resultTitle").textContent=r[0];document.querySelector("#resultText").textContent=r[1];let note=document.querySelector("#result .result-note");if(!note){note=document.createElement("p");note.className="result-note";document.querySelector("#result .result-card").append(note)}note.textContent="ของที่คุณพกออกมา: "+(bag.length?bag.join(" · "):"ไม่มีอะไรเลย")+"\\n\\nบางอย่างจะเปลี่ยน ถ้าคุณกลับเข้าไปอีกครั้ง";story.classList.add("hidden");result.classList.remove("hidden")}
+document.querySelector("#start").onclick=()=>{reset();intro.classList.add("hidden");result.classList.add("hidden");story.classList.remove("hidden");render()};
 document.querySelector("#again").onclick=()=>{reset();result.classList.add("hidden");story.classList.remove("hidden");render()};
 reset();
