@@ -1,29 +1,51 @@
 <!doctype html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>ห้องที่ยังเปิดไฟอยู่</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="noise"></div>
 <main id="app">
+  <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
   <section class="intro screen">
-    <p class="eyebrow">AN UNNECESSARY LITTLE TEST</p>
-    <h1>ห้องที่ยังเปิดไฟอยู่</h1>
-    <p class="lead">เรื่องเล็ก ๆ ที่อยากรู้ว่า<br>ถ้าคืนหนึ่งคุณหลงทางในความฝัน<br>คุณจะเลือกเดินกลับไปทางไหน</p>
-    <button id="start">เข้าไปดูข้างใน</button>
+    <div class="paper-stamp">NO. 0317<br>FOUND / NOT LOST</div>
+    <p class="eyebrow">AN UNNECESSARY LITTLE TEST · VOL. 01</p>
+    <div class="title-wrap">
+      <span class="scribble">✳</span>
+      <h1>ห้องที่ยัง<br><em>เปิดไฟอยู่</em></h1>
+      <span class="red-mark">●</span>
+    </div>
+    <p class="lead">เรื่องเล็ก ๆ ที่อยากรู้ว่า<br>ถ้าคืนหนึ่งคุณหลงทางในความฝัน<br><span>คุณจะเลือกเดินกลับไปทางไหน</span></p>
+    <div class="rule"><i></i><b>03 : 17</b><i></i></div>
+    <button id="start">เข้าไปดูข้างใน <span>↗</span></button>
+    <p class="tiny-note">please do not take this test too seriously.</p>
   </section>
+
   <section id="story" class="screen hidden">
-    <div class="meta"><span id="count"></span><span>คุณยังอยู่ตรงนี้</span></div>
+    <div class="story-head">
+      <span class="label">FIELD NOTE / NIGHT WALK</span>
+      <span id="count"></span>
+    </div>
+    <div class="progress-line"><i></i></div>
+    <p class="margin-note">you are<br>still here.</p>
     <p id="scene" class="scene"></p>
     <div id="choices" class="choices"></div>
+    <div class="footer-mark">KEEP WALKING · KEEP LOOKING</div>
   </section>
+
   <section id="result" class="screen hidden">
-    <p class="eyebrow">YOUR SMALL DISCOVERY</p>
-    <h2 id="resultTitle"></h2>
-    <p id="resultText"></p>
-    <button id="again">เดินเข้าไปอีกครั้ง</button>
+    <div class="result-card">
+      <div class="result-top"><span>SMALL DISCOVERY / 01</span><span>✦</span></div>
+      <p class="eyebrow">YOUR SMALL DISCOVERY</p>
+      <h2 id="resultTitle"></h2>
+      <div class="result-line"></div>
+      <p id="resultText"></p>
+      <div class="seal">END<br>OR<br>BEGIN</div>
+      <button id="again">เดินเข้าไปอีกครั้ง <span>↗</span></button>
+    </div>
   </section>
 </main>
 <script src="script.js"></script>
