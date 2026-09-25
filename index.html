@@ -1,64 +1,36 @@
 <!doctype html>
-<html lang="th">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>บันทึกของคนที่คุณเป็น</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="grain"></div>
-<main>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ห้องที่ยังเปิดไฟอยู่</title><link rel="stylesheet" href="style.css"></head>
+<body><div class="grain"></div><main>
 <section id="intro" class="paper intro">
-  <div class="eyebrow">PERSONALITY FIELD NOTE / 03:17</div>
-  <div class="stamp">ไม่ใช่แบบทดสอบ<br>ที่อยากได้คำตอบถูก</div>
-  <h1>คุณเป็นคน<br><em>แบบไหนกันนะ</em></h1>
-  <p class="lead">ควิซเล็ก ๆ ที่จะไม่ถามว่าคุณเป็นคนแบบไหน<br>เพราะคำตอบของคุณน่าสนใจกว่าคำจำกัดความอยู่แล้ว</p>
-  <div class="rule"><span>01</span><i></i><span>เริ่มจากเรื่องเล็ก ๆ</span></div>
-  <p class="note">เลือกสิ่งที่คุณ “อยากทำจริง ๆ”<br>ไม่ใช่สิ่งที่คิดว่าควรตอบ</p>
-  <button id="start">เริ่มอ่านตัวเอง <span>↗</span></button>
-  <p class="tiny">ใช้เวลาประมาณ 7–10 นาที · ไม่มีคะแนน · ไม่มีคำตอบผิด</p>
+<div class="eyebrow">FIELD NOTE 03:17 / LOST & FOUND</div>
+<div class="stamp">ห้ามเปิด<br>ห้อง 04</div>
+<h1>ห้องที่ยัง<br><em>เปิดไฟอยู่</em></h1>
+<p class="lead">คืนหนึ่ง คุณได้รับข้อความจากคนที่หายไปจากชีวิตคุณนานแล้ว</p>
+<div class="letter">“ถ้ายังจำห้องวาดรูปชั้นสามได้<br>มาหาฉันตอน 03:17<br>และถ้าไฟในห้องยังเปิดอยู่ — อย่าเพิ่งเชื่อเสียงที่เรียกชื่อคุณ”</div>
+<p class="note">ข้างล่างไม่มีใครอยู่<br>ข้างบนมีเสียงเก้าอี้ลากไปบนพื้น</p>
+<button id="start">ขึ้นไปดู <span>↗</span></button>
+<p class="tiny">เรื่องนี้มีคำตอบหลายแบบ แต่ไม่มีคำตอบที่ปลอดภัยทั้งหมด</p>
 </section>
 
-<section id="quiz" class="paper hidden">
-  <header class="quiz-head">
-    <div><b>FIELD NOTE</b><span id="qnum">01 / 16</span></div>
-    <div id="mood">กำลังสังเกต</div>
-  </header>
-  <div class="progress"><i id="progress"></i></div>
-  <div class="question-area">
-    <p class="scene-tag" id="tag">SCENE 01</p>
-    <h2 id="question"></h2>
-    <p class="context" id="context"></p>
-    <div id="choices" class="choices"></div>
-    <div id="freeBox" class="free-box hidden">
-      <textarea id="freeText" maxlength="160" placeholder="ตอบตามที่คิดจริง ๆ..."></textarea>
-      <button id="freeSubmit">ไปต่อ <span>↗</span></button>
-    </div>
-  </div>
-  <div class="side-note" id="sideNote">เกมจะจำบางอย่างไว้</div>
-  <footer><span id="memoryCount">สิ่งที่เกมจำ: 0</span><span id="turnHint">ไม่ต้องรีบ</span></footer>
+<section id="game" class="paper hidden">
+<header class="quiz-head"><div><b>ROOM 03</b><span id="chapter">ชั้นสาม / 01</span></div><div id="clock">03:17</div></header>
+<div class="progress"><i id="progress"></i></div>
+<div class="story"><p class="scene-tag" id="tag"></p><h2 id="sceneTitle"></h2><p id="storyText"></p>
+<div id="objectRow" class="objects"></div><div id="choices" class="choices"></div>
+<div id="inputBox" class="free-box hidden"><textarea id="freeText" maxlength="140" placeholder="เขียนสิ่งที่คุณจะตอบกลับไป..."></textarea><button id="freeSubmit">ส่ง <span>↗</span></button></div>
+</div>
+<aside class="game-aside"><div class="inventory"><span>POCKET</span><div id="bag">ว่าง</div></div><div id="whisper">มีบางอย่างในห้องนี้จำคุณได้</div></aside>
+<footer><span id="memoryCount">เกมจำ: 0</span><span id="hint">03:17 — คุณยังมีเวลา</span></footer>
 </section>
 
 <section id="result" class="paper hidden">
-  <div class="result-top"><span>FIELD NOTE CLOSED</span><span id="resultCode">03:18</span></div>
-  <p class="result-kicker">จากสิ่งที่คุณทำ ไม่ใช่สิ่งที่คุณบอกว่าคุณเป็น</p>
-  <h2 id="resultTitle"></h2>
-  <p class="result-sub" id="resultSub"></p>
-  <div class="result-line"></div>
-  <div class="analysis" id="analysis"></div>
-  <div class="evidence">
-    <div><span>สิ่งที่เกมสังเกต</span><b id="evidenceText"></b></div>
-    <div><span>ความขัดแย้งเล็ก ๆ</span><b id="tensionText"></b></div>
-  </div>
-  <div class="final-line" id="finalLine"></div>
-  <div class="result-actions">
-    <button id="again">ลองอีกครั้ง <span>↗</span></button>
-    <button id="memoryBtn" class="ghost">ดูสิ่งที่เกมจำ</button>
-  </div>
-  <div id="memoryPanel" class="memory-panel hidden"></div>
-</section>
-</main>
-<script src="script.js"></script>
-</body>
-</html>
+<div class="result-top"><span>FIELD NOTE CLOSED</span><span id="resultCode"></span></div>
+<p class="result-kicker">คุณกลับออกมาจากห้อง พร้อมคำตอบหนึ่งชุดที่เป็นของคุณ</p>
+<h2 id="resultTitle"></h2><p class="result-sub" id="resultSub"></p><div class="result-line"></div>
+<div class="analysis" id="analysis"></div>
+<div class="evidence"><div><span>สิ่งที่คุณทำ</span><b id="evidenceText"></b></div><div><span>สิ่งที่คุณไม่ทำ</span><b id="missedText"></b></div></div>
+<div class="final-line" id="finalLine"></div>
+<div class="result-actions"><button id="again">กลับเข้าห้องอีกครั้ง <span>↗</span></button><button id="memoryBtn" class="ghost">เปิดกระเป๋าความจำ</button></div>
+<div id="memoryPanel" class="memory-panel hidden"></div>
+</section></main><script src="script.js"></script></body></html>
