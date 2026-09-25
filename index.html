@@ -11,42 +11,31 @@
 <main id="app">
   <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
   <section class="intro screen">
-    <div class="paper-stamp">NO. 0317<br>FOUND / NOT LOST</div>
-    <p class="eyebrow">AN UNNECESSARY LITTLE TEST · VOL. 01</p>
-    <div class="title-wrap">
-      <span class="scribble">✳</span>
-      <h1>ห้องที่ยัง<br><em>เปิดไฟอยู่</em></h1>
-      <span class="red-mark">●</span>
-    </div>
-    <p class="lead">เรื่องเล็ก ๆ ที่อยากรู้ว่า<br>ถ้าคืนหนึ่งคุณหลงทางในความฝัน<br><span>คุณจะเลือกเดินกลับไปทางไหน</span></p>
-    <div class="rule"><i></i><b>03 : 17</b><i></i></div>
-    <button id="start">เข้าไปดูข้างใน <span>↗</span></button>
-    <p class="tiny-note">please do not take this test too seriously.</p>
-  </section>
-
-  <section id="story" class="screen hidden">
-    <div class="story-head">
-      <span class="label">FIELD NOTE / NIGHT WALK</span>
-      <span id="count"></span>
-    </div>
-    <div class="progress-line"><i></i></div>
-    <p class="margin-note">you are<br>still here.</p>
-    <p id="scene" class="scene"></p>
-    <div id="choices" class="choices"></div>
-    <div class="footer-mark">KEEP WALKING · KEEP LOOKING</div>
-  </section>
-
-  <section id="result" class="screen hidden">
-    <div class="result-card">
-      <div class="result-top"><span>SMALL DISCOVERY / 01</span><span>✦</span></div>
-      <p class="eyebrow">YOUR SMALL DISCOVERY</p>
-      <h2 id="resultTitle"></h2>
-      <div class="result-line"></div>
-      <p id="resultText"></p>
-      <div class="seal">END<br>OR<br>BEGIN</div>
-      <button id="again">เดินเข้าไปอีกครั้ง <span>↗</span></button>
-    </div>
-  </section>
+<p class="eyebrow">FIELD NOTE 03:17 / OBJECT STUDY</p>
+<h1>ห้องที่ยัง<br><em>เปิดไฟอยู่</em></h1>
+<p class="lead">เกมเล็ก ๆ ที่ไม่ได้ถามว่าคุณเป็นคนแบบไหน<br>มันแค่ดูว่าเวลาอยู่คนเดียวกับของบางอย่าง<br>คุณจะ <u>ทำอะไรกับมัน</u></p>
+<div class="intro-note">ไม่มีคำตอบถูก<br>และไม่มีใครบอกว่าต้องรีบ</div>
+<button id="start">เข้าไปในห้อง <span>↗</span></button>
+</section>
+<section id="game" class="screen hidden">
+<header class="game-head"><div><b>ROOM 01</b><span id="roomLabel">ห้องเดิม</span></div><div id="clock">03:17</div></header>
+<div class="room-wrap"><div id="room" class="room">
+<div class="wall"></div><div class="floor"></div>
+<button class="hotspot clock-hit" data-object="clock">นาฬิกา</button>
+<button class="hotspot picture-hit" data-object="picture">ภาพวาด</button>
+<button class="hotspot window-hit" data-object="window">หน้าต่าง</button>
+<button class="hotspot table-hit" data-object="table">โต๊ะ</button>
+<button class="hotspot door-hit" data-object="door">ประตู</button>
+<div class="lamp"></div><div class="table-shape"></div><div class="chair"></div>
+<div class="painting"><span></span></div><div class="window-shape"><i></i><i></i></div><div class="door-shape"><i></i></div>
+</div></div>
+<div class="lower"><aside class="pocket"><span>POCKET</span><div id="bag">ว่างเปล่า</div></aside>
+<section class="log"><div class="log-top"><span id="turn">01</span><span>คลิกสิ่งที่อยากดู</span></div><p id="message"></p><div id="actions" class="actions"></div></section></div>
+</section>
+<section id="ending" class="screen hidden">
+<p class="eyebrow">FIELD NOTE CLOSED / 03:18</p><h2 id="endingTitle"></h2><div class="ending-rule"></div><p id="endingText"></p><div class="ending-meta" id="endingMeta"></div>
+<button id="again">กลับเข้าไปอีกครั้ง <span>↗</span></button>
+</section>
 </main>
 <script src="script.js"></script>
 </body>
