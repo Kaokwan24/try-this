@@ -1,71 +1,26 @@
-const scenes=[
-{t:"คุณตื่นขึ้นมาในห้องที่ไม่รู้จัก\\nนาฬิกาหยุดอยู่ที่ 03:17\\nหน้าต่างเปิดรับลม ทั้งที่คุณจำได้ว่าปิดมันก่อนนอน\\n\\nบนโต๊ะมีของสามอย่าง",c:[
-["กุญแจสนิม — ของที่ดูเหมือนเคยเปิดบางอย่าง",{item:"key",f:{key:1},c:{courage:1,curiosity:1}}],
-["จดหมายที่เขียนชื่อคุณ — ลายมือเหมือนคนที่คุณเคยรู้จัก",{item:"letter",f:{readLetter:1},c:{memory:1,tenderness:1}}],
-["ขนมหมดอายุสี่ปี — กลิ่นยังดีอย่างน่าสงสัย",{item:"snack",f:{snack:1},c:{play:1}}]]},
-{t:"ประตูปรากฏขึ้นตรงหน้า\\nมันไม่มีมือจับจากด้านนี้\\nจากอีกฝั่งมีเสียงถามเบา ๆ\\n\\n“คุณยังจำได้ไหม?”",c:[
-["เปิดทันที",{f:{door:1},c:{courage:2}}],
-["เอาหูแนบประตู แล้วถามว่า “จำอะไร?”",{f:{listen:1},c:{curiosity:2,tenderness:1}}],
-["เคาะสามครั้ง แล้วรอ",{f:{knock:1},c:{patience:2}}]]},
-{t:"หลังประตูเป็นร้านถ่ายรูปเล็ก ๆ\\nไม่มีคนเฝ้า\\nในรูปหนึ่ง คุณกำลังยืนอยู่ในห้องนี้\\nด้านหลังรูปเขียนว่า “ถ่ายเมื่อ 11 ปีก่อน”",c:[
-["เอารูปใบนั้นกลับไป",{item:"photo",f:{photo:1},c:{memory:2}}],
-["พลิกดูด้านหลังให้ละเอียด",{f:{photoBack:1},c:{curiosity:2}}],
-["วางมันไว้ที่เดิม เพราะบางอย่างไม่ควรถูกพากลับไป",{f:{leavePhoto:1},c:{patience:1,tenderness:2}}]]},
-{t:"ทางแยกสามทาง\\nป้ายหนึ่งเขียนว่า “ทางกลับ”\\nอีกป้าย “ทางที่ยังไม่เกิดขึ้น”\\nป้ายสุดท้ายถูกขีดทิ้งจนอ่านไม่ออก",c:[
-["ไปทางกลับ",{f:{back:1},c:{memory:1}}],
-["ไปทางที่ยังไม่เกิดขึ้น",{f:{future:1},c:{hope:2}}],
-["เดินตามป้ายที่ถูกขีดทิ้ง",{f:{wrong:1},c:{curiosity:1,play:1}}]]},
-{t:"ห้องพักเล็ก ๆ มีเก้าอี้และกระจก\\nในกระจก คุณเห็นตัวเองช้ากว่าความจริงสามวินาที\\nแล้วเงาในกระจกยกมือขึ้นก่อนคุณ",c:[
-["ยกมือตามมัน",{f:{mirror:1},c:{curiosity:1,art:1}}],
-["ถามเงาว่า “เธออยากได้อะไร?”",{f:{mirrorTalk:1},c:{tenderness:2}}],
-["ทุบกระจก",{f:{mirrorBreak:1},c:{courage:2}}]]},
-{t:"ถ้าคุณเก็บจดหมายไว้ คุณพบข้อความใหม่ด้านใน:\\n“ถ้าเจอคนที่จำคุณได้ก่อนคุณจำเขาได้ อย่ารีบถามว่าเขาเป็นใคร”\\nถ้าไม่ได้เก็บจดหมาย คุณพบเพียงกระดาษเปล่า",c:[
-["เขียนชื่อใครสักคนลงบนกระดาษ",{f:{nameWrite:1},c:{memory:1}}],
-["พับกระดาษเป็นเรือ",{item:"boat",f:{boat:1},c:{play:2,hope:1}}],
-["ฉีกกระดาษทิ้ง แล้วดูว่ามีอะไรอยู่ข้างใต้",{f:{underPaper:1},c:{curiosity:2}}]]},
-{t:"โทรศัพท์สีดำดังขึ้นเพียงครั้งเดียว\\nหน้าจอขึ้นเวลา 03:17\\nถ้าคุณรับสาย จะได้ยินเสียงของตัวเองพูดว่า\\n“อย่าไว้ใจตอนจบ”",c:[
-["รับสาย",{f:{phone:1},c:{courage:1,curiosity:2}}],
-["ปล่อยให้มันดังหายไป",{f:{ignorePhone:1},c:{patience:2}}],
-["โทรกลับหาตัวเอง",{f:{callBack:1},c:{play:2,art:1}}]]},
-{t:"เด็กคนหนึ่งนั่งอยู่บนพื้น ถือของชิ้นหนึ่งที่คุณเคยเห็น\\nเขาถามว่า “ของชิ้นนี้เป็นของคุณหรือเปล่า?”",c:[
-["ตอบว่าใช่",{f:{claim:1},c:{memory:1}}],
-["ตอบว่าไม่รู้",{f:{unsure:1},c:{patience:1,curiosity:1}}],
-["ถามกลับว่า “แล้วของนายอยู่ไหน?”",{f:{askChild:1},c:{tenderness:2,curiosity:1}}]]},
-{t:"เหนือประตูสีขาวมีคำถามเดียว\\n“ถ้าคุณรู้ว่าการกลับออกไปจะทำให้คุณลืมทุกอย่างที่เกิดขึ้นที่นี่ คุณยังจะกลับไหม?”",c:[
-["กลับ — ฉันไม่จำเป็นต้องจำทุกอย่าง",{f:{leave:1},c:{hope:1,tenderness:1}}],
-["ไม่กลับ — ฉันอยากรู้ให้หมด",{f:{stay:1},c:{curiosity:2}}],
-["ขอเปิดประตูอีกบานก่อน",{f:{anotherDoor:1},c:{play:1,art:2}}]]},
-{t:"โต๊ะตัวเดิมจากห้องแรกกลับมาอีกครั้ง\\nกุญแจ จดหมาย ขนม และรูปถ่ายวางเรียงกัน\\nมีของอีกชิ้นที่ไม่เคยอยู่ตรงนั้น: กุญแจอีกดอก\\nป้ายเขียนว่า “ของคุณ เมื่อครั้งที่แล้ว”",c:[
-["หยิบกุญแจดอกใหม่",{item:"oldKey",f:{oldKey:1},c:{memory:1,curiosity:1}}],
-["ทิ้งทุกอย่างไว้ แล้วเดินออก",{f:{release:1},c:{hope:2}}],
-["หยิบของที่ตัวเองเคยทิ้งไว้กลับมาด้วย",{f:{returnItem:1},c:{courage:1,play:1}}]]},
-{t:"คุณกลับมาถึงห้องแรก\\nนาฬิกายังเป็น 03:17 แต่ตอนนี้คุณรู้แล้วว่ามันไม่ได้หยุด\\nมันกำลังรอ\\nประตูที่คุณเข้ามาหายไป เหลือเพียงหน้าต่าง",c:[
-["ถามว่า “ฉันเคยมาที่นี่แล้วใช่ไหม?”",{f:{askFinal:1},c:{curiosity:2,memory:1}}],
-["พูดว่า “ถ้าอย่างนั้นก็เริ่มใหม่”",{f:{restart:1},c:{hope:2,play:1}}],
-["ไม่ถามอะไรเลย",{f:{silentFinal:1},c:{patience:2,tenderness:1}}]]},
-{t:"บนกระจกมีข้อความปรากฏขึ้น\\n“สิ่งที่คุณเลือกมาตลอดทางไม่ได้บอกว่าคุณเป็นคนแบบไหน\\nมันบอกว่า เมื่อไม่มีใครมอง คุณเลือกปฏิบัติต่อสิ่งที่อยู่ตรงหน้าอย่างไร”\\n\\nคุณเอามือแตะกระจก มันอุ่น",c:[
-["แตะต่อ",{f:{touch:1},c:{tenderness:1}}],
-["ถอนมือ",{f:{withdraw:1},c:{courage:1}}],
-["เคาะกระจกสามครั้ง",{f:{knockGlass:1},c:{curiosity:1,play:1}}]]}
-];
-
-const endings={
-loop:["คนที่กลับมาถึงที่เดิมโดยไม่เหมือนเดิม","นาฬิกาเปลี่ยนจาก 03:17 เป็น 03:18\\nแล้วไฟในห้องก็ดับลง\\n\\nบนโต๊ะมีจดหมายฉบับใหม่เขียนด้วยลายมือของคุณเอง:\\n“รอบนี้ลองเลือกสิ่งที่คุณไม่เคยเลือกดู”\\n\\nคุณหัวเราะเบา ๆ เพราะเพิ่งรู้ว่าเกมนี้อาจไม่ได้เริ่มคืนนี้เป็นครั้งแรก"],
-memory:["นักเก็บหลักฐานของสิ่งที่ไม่มีใครเห็น","คุณออกมาพร้อมรูปถ่ายหนึ่งใบ\\nในรูปไม่มีคุณอยู่แล้ว มีเพียงเก้าอี้ว่างกับไฟดวงเล็ก\\n\\nด้านหลังรูปเขียนว่า “ขอบคุณที่จำแทนเรา”\\n\\nบางความทรงจำไม่ได้มีไว้ย้อนกลับไป มันมีไว้เพื่อพิสูจน์ว่าเรายังเดินต่อมาได้"],
-mirror:["คนที่ยอมคุยกับตัวเองจนถึงที่สุด","เงาในกระจกไม่ได้ตามคุณออกมา\\nมันเพียงยืนอยู่ตรงนั้นและยิ้ม\\n\\nก่อนกระจกจะกลับมาเป็นกระจกธรรมดา มันขยับปากเป็นคำว่า\\n“คราวหน้าไม่ต้องกลัวฉันก็ได้”"],
-hope:["คนที่ทิ้งไฟไว้ให้ตัวเองกลับมา","คุณเปิดประตูออก ข้างนอกไม่มีทางเดิน ไม่มีห้อง ไม่มีคำตอบ\\nมีเพียงเช้าวันใหม่\\n\\nคุณไม่รู้ว่าทุกอย่างเกิดขึ้นจริงหรือไม่ แต่เมื่อกลับถึงบ้าน คุณเปิดไฟไว้หนึ่งดวง เผื่อใครบางคนที่ยังหาทางกลับไม่เจอ"],
-strange:["คนที่เลือกประตูที่เกมไม่ได้วาดไว้","กำแพงข้างหลังคุณเปิดออกเป็นรอยแยกเล็ก ๆ\\nไม่มีใครเขียนมันไว้ในแผนที่\\n\\nคุณเดินเข้าไปและพบโต๊ะตัวหนึ่งที่มีป้ายชื่อว่า\\n“สำหรับคนที่ไม่เชื่อว่ามีแค่ตอนจบเดียว”\\n\\nบนโต๊ะมีเกมอีกเกมหนึ่งวางอยู่"],
-tender:["คนที่ทิ้งที่ว่างไว้ให้บางสิ่ง","คุณออกจากห้องโดยไม่เอาของกลับไปสักชิ้น\\nแต่เมื่อถึงบ้าน คุณพบกลิ่นขนมเก่า ๆ ในห้องครัว\\n\\nไม่มีใครอยู่ ไม่มีอะไรหาย\\n\\nคุณยิ้ม และไม่ได้พยายามหาคำอธิบาย"],
-default:["คนที่ไม่ยอมให้คำตอบจบเรื่อง","คุณออกมาพร้อมคำตอบที่ไม่ค่อยเหมือนคำตอบ\\n\\nบางทีสิ่งที่เปลี่ยนคุณไม่ใช่ประตูที่เปิด แต่เป็นสิ่งเล็ก ๆ ที่คุณเลือกจะไม่เดินผ่าน\\n\\n03:18\\nคราวนี้นาฬิกาเดินต่อแล้ว"]
+const state={turn:1,bag:[],flags:{},seen:new Set(),room:"main"};
+const data={
+clock:["คุณลองมองนาฬิกาใกล้ ๆ เข็มวินาทีไม่เดิน แต่เสียงติ๊กยังดังอยู่\nของบางอย่างหยุดได้โดยไม่ยอมหยุดทำหน้าที่ของมัน","03:18 แล้วก็กลับมา 03:17\nเหมือนห้องนี้กำลังลองหัดจำเวลาใหม่",[["เอาหูแนบฟัง",()=>{state.flags.clock=1;say("เสียงไม่ได้มาจากนาฬิกา\nมันมาจากใต้โต๊ะ")}]]],
+picture:["ภาพวาดเป็นห้องเดียวกับห้องนี้ แต่ในภาพมีเก้าอี้สองตัว ทั้งที่ตอนนี้มีตัวเดียว\nคนหนึ่งนั่งหันหลังให้คุณ","คนในภาพหายไปแล้ว เหลือเพียงรอยสีแดงตรงตำแหน่งที่เขาเคยนั่ง",[["ลองนับเก้าอี้",()=>{state.flags.chair=1;say("หนึ่งตัวในห้อง\nสองตัวในภาพ\nแล้วเสียงจากด้านหลังพูดว่า “นับผิด”")}]]],
+window:["หน้าต่างเปิดอยู่ ลมข้างนอกเย็นเกินกว่าจะเป็นคืนธรรมดา\nข้างล่างไม่มีถนน มีเพียงไฟหน้าต่างของตึกที่ไม่ควรอยู่ตรงนั้น","ไฟสามดวงดับพร้อมกัน แล้วหน้าต่างห้องหนึ่งเปิดขึ้นเอง\nคนข้างในยกมือให้คุณ ทั้งที่คุณมองไม่เห็นหน้า",[["โบกมือกลับ",()=>say("คนคนนั้นโบกกลับช้ากว่าคุณสามวินาที")],["ปิดหน้าต่าง",()=>{state.flags.close=1;say("เสียงข้างนอกหายไป\nแต่เสียงเคาะดังขึ้นจากในห้องแทน")}]]],
+table:["บนโต๊ะมีลิ้นชักสามช่อง\nช่องแรกว่าง ช่องสองมีเศษกระดาษ ช่องสามล็อกด้วยกุญแจที่ไม่มีอยู่แถวนี้","เศษกระดาษเปลี่ยนข้อความ\n“อย่าหาของที่หายไป ให้หาของที่ถูกทิ้งไว้”",[["หยิบกระดาษ",()=>{if(!state.bag.includes("เศษกระดาษ"))state.bag.push("เศษกระดาษ");state.flags.paper=1;say("ด้านหลังเขียนว่า “กุญแจไม่ได้อยู่ในห้องแรก”")}],["มองใต้โต๊ะ",()=>{if(state.flags.clock){state.bag.push("กุญแจสนิม");state.flags.key=1;say("คุณพบกุญแจสนิม\nป้ายเล็ก ๆ เขียนว่า “สำหรับประตูที่ยังไม่เกิดขึ้น”")}else say("ไม่มีอะไรอยู่ใต้โต๊ะ\nหรืออย่างน้อยคุณยังหาไม่เจอ")}],["เปิดลิ้นชัก",()=>{if(state.bag.includes("กุญแจสนิม")){state.flags.drawer=1;say("ข้างในมีรูปถ่ายของคุณยืนหน้าประตูบานนี้\nวันที่ใต้รูปคือพรุ่งนี้")}else say("ล็อกไม่ขยับ\nมันเหมือนกำลังรอของบางอย่างจากห้องอื่น")}]]],
+door:["ประตูธรรมดาเกินไปจนไม่น่าไว้ใจ\nไม่มีลูกบิด มีเพียงรอยขีดว่า “กลับมาเมื่อพร้อม”","ตอนนี้คุณเห็นลูกบิดแล้ว\nมันอยู่ตรงตำแหน่งที่เมื่อก่อนไม่มีอะไรเลย",[["เปิดประตู",()=>{if(state.bag.includes("กุญแจสนิม")||state.flags.drawer){state.room="hall";renderRoom();say("ประตูเปิดออกสู่โถงแคบ ๆ\nปลายทางมีโทรศัพท์สีดำกับกระจกบานใหญ่")}else say("ประตูไม่เปิด\nเสียงจากอีกฝั่งพูดว่า “ของที่ต้องใช้ยังอยู่กับคุณ”")}],["เคาะสามครั้ง",()=>{state.flags.knock=1;say("ครั้งแรกไม่มีอะไร\nครั้งที่สองมีคนเคาะกลับ\nครั้งที่สาม เสียงกลับมาจากข้างหลังคุณ")}]]],
+phone:["โทรศัพท์สีดำดังขึ้นเพียงครั้งเดียว\nหน้าจอขึ้น 03:17\nเสียงปลายสายพูดว่า “อย่ารีบทำให้เรื่องนี้เป็นเรื่องของตัวเอง”","ใต้โทรศัพท์มีข้อความว่า\n“ถ้าคุณยังฟังอยู่ แปลว่าคุณยังไม่ได้กลับ”",[["รับสาย",()=>{state.flags.phone=1;say("ปลายสายคือเสียงของคุณเอง\n“ครั้งแรกฉันก็คิดว่าต้องหาคำตอบ”\nแล้วสายก็ตัด")}],["ยกหูแล้วไม่พูด",()=>say("อีกฝั่งเงียบอยู่นาน\nก่อนจะพูดว่า “ขอบคุณที่ไม่ถาม”")],["วางสาย",()=>{state.flags.hangup=1;say("เสียงดังติ๊กหนึ่งครั้ง\nนาฬิกาในห้องหลักขยับเป็น 03:18")}]]],
+mirror:["ในห้องปลายโถงมีกระจกบานใหญ่\nคุณยกมือ — เงายังไม่ยกตาม\nมันมองคุณเหมือนกำลังรอให้คุณจำบางอย่างได้","เงากลับมาเหมือนเดิม แต่มีรอยยิ้ม\nพื้นมีกระดาษเขียนว่า “ครั้งแรกคุณเดินผ่านฉันไป”",[["ถามว่าเคยเจอกันไหม",()=>{state.flags.mirror=1;say("เงาพยักหน้า\n“คุณไม่จำเป็นต้องจำฉันหรอก ฉันมีหน้าที่จำคุณ”")}],["แตะกระจก",()=>{state.flags.touch=1;say("กระจกอุ่นเหมือนผิวหนัง\nเงาของคุณหลับตาก่อนคุณหนึ่งวินาที")}],["กลับห้องเดิม",()=>{state.flags.returned=1;state.room="main";renderRoom();say("คุณกลับมาที่ห้องเดิม\nแต่ภาพวาดเปลี่ยนไป: ตอนนี้ในภาพมีคุณสองคน")}]]]
 };
-
-let i=0,scores={courage:0,curiosity:0,memory:0,tenderness:0,patience:0,art:0,hope:0,play:0},bag=[],flags={};
-const story=document.querySelector("#story"),intro=document.querySelector(".intro"),result=document.querySelector("#result");
-function reset(){i=0;scores={courage:0,curiosity:0,memory:0,tenderness:0,patience:0,art:0,hope:0,play:0};bag=[];flags={};}
-function inventory(){let el=document.querySelector("#inventory");if(!el){el=document.createElement("div");el.id="inventory";el.className="inventory";story.prepend(el)}el.innerHTML="<span>POCKET</span>"+(bag.length?bag.map(x=>"<b>"+x+"</b>").join(""):"<b>ว่างเปล่า</b>")}
-function render(){document.querySelector("#count").textContent=String(i+1).padStart(2,"0")+" / "+String(scenes.length).padStart(2,"0");document.querySelector("#scene").textContent=scenes[i].t;const bar=document.querySelector(".progress-line i");if(bar)bar.style.width=((i+1)/scenes.length*100)+"%";inventory();const box=document.querySelector("#choices");box.innerHTML="";scenes[i].c.forEach(([label,add])=>{const b=document.createElement("button");b.className="choice";b.textContent=label;b.onclick=()=>pick(add);box.appendChild(b)})}
-function pick(add){if(add.item&&!bag.includes(add.item))bag.push(add.item);if(add.f)Object.assign(flags,add.f);if(add.c)Object.entries(add.c).forEach(([k,v])=>scores[k]+=v);if(i<scenes.length-1){i++;render()}else finish()}
-function finish(){let key="default";if(flags.askFinal&&flags.oldKey)key="loop";else if(flags.mirrorTalk||flags.mirrorBreak)key="mirror";else if(flags.photo||flags.photoBack||flags.claim)key="memory";else if(flags.leave||flags.release||flags.restart)key="hope";else if(flags.anotherDoor||flags.callBack||flags.wrong)key="strange";else if(flags.askChild||flags.touch)key="tender";const r=endings[key];document.querySelector("#resultTitle").textContent=r[0];document.querySelector("#resultText").textContent=r[1];let note=document.querySelector("#result .result-note");if(!note){note=document.createElement("p");note.className="result-note";document.querySelector("#result .result-card").append(note)}note.textContent="ของที่คุณพกออกมา: "+(bag.length?bag.join(" · "):"ไม่มีอะไรเลย")+"\\n\\nบางอย่างจะเปลี่ยน ถ้าคุณกลับเข้าไปอีกครั้ง";story.classList.add("hidden");result.classList.remove("hidden")}
-document.querySelector("#start").onclick=()=>{reset();intro.classList.add("hidden");result.classList.add("hidden");story.classList.remove("hidden");render()};
-document.querySelector("#again").onclick=()=>{reset();result.classList.add("hidden");story.classList.remove("hidden");render()};
-reset();
+const endings={
+memory:["คนที่เก็บหลักฐานของสิ่งที่ไม่มีใครเห็น","คุณไม่ได้ออกจากห้องพร้อมคำตอบที่สมบูรณ์ คุณออกมาพร้อมเศษกระดาษและความรู้สึกว่าของบางอย่างกำลังพยายามจำคุณแทนที่คุณจะจำมัน\n\nตอนที่ประตูปิดลง คุณนึกถึงภาพวาดที่มีเก้าอี้สองตัว และเพิ่งเข้าใจว่าตัวที่สองไม่ได้ว่างเปล่า มันแค่ไม่มีใครนั่งอยู่ในแบบที่มนุษย์มองเห็น\n\nเมื่อกลับถึงบ้าน ด้านหลังเศษกระดาษมีประโยคใหม่ว่า “ขอบคุณที่ไม่รีบสรุปว่าอะไรจริง”\n\nบางทีสิ่งที่คุณเอากลับมาไม่ใช่ความทรงจำ แต่เป็นนิสัยใหม่ — การยอมให้บางสิ่งยังไม่ต้องมีคำอธิบายก็ได้"],
+mirror:["คนที่ยอมคุยกับเงาของตัวเอง","คุณใช้เวลานานอยู่หน้ากระจก ไม่ใช่เพราะกลัว แต่เพราะเป็นครั้งแรกที่คุณไม่พยายามรีบแปลสิ่งตรงหน้าให้กลายเป็นตัวเอง\n\nเงาบอกว่ามันเคยเจอคุณมาก่อน คุณถามว่าเมื่อไหร่ มันตอบว่า “ทุกครั้งที่คุณรู้ว่าตัวเองควรพัก แต่ยังฝืนเดินต่อ”\n\nก่อนคุณจะเดินออก มันพูดว่า “คราวหน้าไม่ต้องเอาชนะฉันก็ได้”\n\nเมื่อกลับถึงบ้าน กระจกสะท้อนทุกอย่างตามปกติ ยกเว้นตอน 03:17 — เงาของคุณจะหันมามองก่อนคุณเสมอ\nและครั้งนี้ คุณไม่ได้อยากแก้ไขมันอีกแล้ว"],
+loop:["คนที่เคยอยู่ที่นี่มาก่อน","เมื่อคุณกลับถึงห้องเดิม นาฬิกาเปลี่ยนเป็น 03:18 เป็นครั้งแรก\n\nบนโต๊ะมีจดหมาย ลายมือบนซองเป็นลายมือของคุณเอง\nข้างในเขียนว่า “ถ้าคุณกำลังอ่านนี่ แปลว่าคุณกลับมาได้อีกครั้ง คราวนี้อย่าพยายามเล่นให้ถูก เพราะเราไม่เคยทำได้อยู่แล้ว”\n\nกระดาษมีรอยพับเก่า ๆ เหมือนเคยถูกอ่านมานับครั้งไม่ถ้วน\n\nคุณไม่รู้ว่าคืนนี้เป็นครั้งแรก ครั้งที่สอง หรือครั้งที่สิบ\nก่อนนอนคุณตั้งนาฬิกาไว้ที่ 03:17 อย่างจงใจ ไม่ใช่เพราะอยากกลับเข้าไป แค่อยากรู้ว่า ถ้าประตูเปิดอีกครั้ง คุณจะยังเลือกเดินเข้าไปไหม"],
+open:["คนที่เปิดประตูโดยไม่รู้ว่าข้างในคืออะไร","คุณไม่ได้เลือกคำตอบที่กล้าหาญที่สุด คุณแค่หมุนลูกบิดเมื่อมันพร้อม\n\nด้านหลังประตูไม่มีปีศาจ ไม่มีคำเฉลย มีเพียงทางเดินสั้น ๆ กับแสงเช้าจาง ๆ\n\nคุณเดินไปจนสุดทาง แล้วพบประตูอีกบานเขียนว่า “กลับ”\n\nสุดท้ายคุณเดินออกมา\nบางเรื่องไม่ได้ต้องการให้เราค้นจนหมด มันแค่ต้องการให้เรากล้าพอจะเปิดประตูหนึ่งบาน แล้วรู้จักหยุดเมื่อถึงเวลาของตัวเอง"],
+silent:["คนที่ไม่จำเป็นต้องตอบทุกอย่าง","คุณเดินออกจากห้องโดยไม่เอาอะไรกลับมา\n\nตอนแรกมันน่าผิดหวัง แต่ระหว่างทางคุณเริ่มนึกถึงหลายครั้งในชีวิตที่พยายามเก็บทุกอย่างไว้เพียงเพราะกลัวว่าถ้าปล่อยไป ความหมายจะหาย\n\nบางทีความหมายไม่ได้หาย บางทีมันแค่ไม่จำเป็นต้องอยู่ในกระเป๋า\n\nเช้าวันต่อมา คุณเปิดไฟในห้องไว้หนึ่งดวงก่อนออกจากบ้าน เผื่อมีใครบางคนกำลังหาทางกลับ"],
+default:["คนที่ไม่ยอมให้ตอนจบรีบจบ","คุณออกมาพร้อมคำตอบที่ไม่ค่อยเหมือนคำตอบ\n\nคุณยังไม่รู้ว่าทำไมภาพวาดถึงมีเก้าอี้เกินมา ทำไมโทรศัพท์ถึงรู้เสียงของคุณ หรือทำไมประตูถึงเหมือนกำลังรอคนที่เคยเปิดมันมาก่อน\n\nแต่เป็นครั้งแรกที่คุณไม่ได้รู้สึกว่าต้องรู้ทั้งหมด\n\nสิ่งที่เปลี่ยนอาจไม่ใช่ห้อง แต่เป็นวิธีที่คุณมองของธรรมดาหลังจากนั้น\n\n03:18\nคราวนี้เวลาเดินต่อจริง ๆ แต่คุณยังหันกลับไปมองประตูอีกครั้งก่อนกลับบ้าน"]
+};
+const $=s=>document.querySelector(s),game=$("#game"),intro=document.querySelector(".intro"),ending=$("#ending"),room=$("#room");
+function bag(){$("#bag").innerHTML=state.bag.length?state.bag.map(x=>"<b>"+x+"</b>").join(""):"ว่างเปล่า"}
+function say(t,acts=[]){$("#message").textContent=t;$("#actions").innerHTML="";acts.forEach(([label,fn])=>{const b=document.createElement("button");b.className="action";b.textContent=label;b.onclick=fn;$("#actions").append(b)});$("#turn").textContent=String(state.turn++).padStart(2,"0");bag()}
+function inspect(o){if(o==="back"){finish();return}const d=data[o];if(!d)return;const first=!state.seen.has(o);state.seen.add(o);say(first?d[0]:d[1],d[2])}
+function renderRoom(){if(state.room==="hall")room.innerHTML='<div class="wall"></div><div class="floor"></div><div class="mirror-big"></div><div class="phone-shape"></div><div class="hall-door"></div><button class="hotspot mirror-hit" data-object="mirror">กระจก</button><button class="hotspot phone-hit" data-object="phone">โทรศัพท์</button><button class="hotspot back-hit" data-object="back">กลับห้อง</button>';else room.innerHTML='<div class="wall"></div><div class="floor"></div><div class="lamp"></div><div class="table-shape"></div><div class="chair"></div><div class="painting"><span></span></div><div class="window-shape"><i></i><i></i></div><div class="door-shape"><i></i></div><button class="hotspot clock-hit" data-object="clock">นาฬิกา</button><button class="hotspot picture-hit" data-object="picture">ภาพวาด</button><button class="hotspot window-hit" data-object="window">หน้าต่าง</button><button class="hotspot table-hit" data-object="table">โต๊ะ</button><button class="hotspot door-hit" data-object="door">ประตู</button>';document.querySelectorAll(".hotspot").forEach(b=>b.onclick=()=>inspect(b.dataset.object));$("#roomLabel").textContent=state.room==="hall"?"โถง / ห้องกระจก":"ห้องเดิม"}
+function finish(){let k="default";if(state.flags.mirror||state.flags.touch)k="mirror";else if(state.flags.drawer||state.flags.paper)k="memory";else if(state.flags.clock&&state.flags.knock)k="loop";else if(state.flags.hangup||state.flags.close)k="open";else if(state.flags.returned)k="silent";const e=endings[k];$("#endingTitle").textContent=e[0];$("#endingText").textContent=e[1];$("#endingMeta").textContent="สิ่งที่คุณพกออกมา: "+(state.bag.join(" · ")||"ไม่มีอะไร")+"\nสิ่งที่คุณเคยแตะ: "+Array.from(state.seen).join(" · ")+"\n\nตอนจบนี้เกิดจากสิ่งที่คุณทำ ไม่ใช่คำตอบแบบทดสอบ";game.classList.add("hidden");ending.classList.remove("hidden")}
+function start(){state.turn=1;state.bag=[];state.flags={};state.seen=new Set();state.room="main";intro.classList.add("hidden");ending.classList.add("hidden");game.classList.remove("hidden");renderRoom();say("คุณตื่นขึ้นมาในห้องที่ไม่รู้จัก นาฬิกาหยุดอยู่ที่ 03:17\n\nไม่มีปุ่มให้เลือกว่าคุณเป็นคนแบบไหนแล้ว ตอนนี้ลองคลิกของที่คุณอยากรู้")}
+$("#start").onclick=start;$("#again").onclick=start;
