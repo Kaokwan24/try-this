@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Serif+Thai:wght@400;500;600&display=swap');
+*{box-sizing:border-box}body{margin:0;background:#eee9df;color:#24231f;font-family:"Noto Serif Thai",serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.09;background-image:radial-gradient(#222 0.6px,transparent .6px);background-size:5px 5px}
+main{min-height:100vh;display:grid;place-items:center;padding:28px}.screen{width:min(720px,100%);padding:clamp(30px,7vw,72px);border:1px solid #24231f;background:rgba(238,233,223,.78);box-shadow:10px 10px 0 #24231f}
+.hidden{display:none}.eyebrow,.meta{font:500 11px "IBM Plex Mono",monospace;letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(48px,10vw,94px);line-height:1.02;font-weight:500;margin:28px 0}.lead{font-size:clamp(18px,3vw,25px);line-height:2;margin-bottom:44px}
+button{font:500 13px "IBM Plex Mono",monospace;background:#24231f;color:#eee9df;border:0;padding:16px 22px;cursor:pointer;transition:.2s}
+button:hover{transform:translate(4px,4px);box-shadow:-4px -4px 0 #24231f}
+.meta{display:flex;justify-content:space-between;border-bottom:1px solid #aaa397;padding-bottom:15px}.scene{font-size:clamp(21px,4vw,31px);line-height:1.9;white-space:pre-line;margin:45px 0}.choices{display:grid;gap:12px}.choice{background:transparent;color:#24231f;border:1px solid #777269;text-align:left;font-family:"Noto Serif Thai",serif;font-size:16px;line-height:1.7}.choice:hover{background:#24231f;color:#eee9df}
+h2{font-size:clamp(38px,8vw,68px);line-height:1.1;font-weight:500;margin:22px 0}.result p:not(.eyebrow){font-size:19px;line-height:2;margin-bottom:40px}@media(max-width:600px){main{padding:14px}.screen{box-shadow:6px 6px 0 #24231f}.meta{font-size:9px}.scene{margin:32px 0}}
