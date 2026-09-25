@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>ห้องที่ยังเปิดไฟอยู่</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="app">
+  <section class="intro screen">
+    <p class="eyebrow">AN UNNECESSARY LITTLE TEST</p>
+    <h1>ห้องที่ยังเปิดไฟอยู่</h1>
+    <p class="lead">เรื่องเล็ก ๆ ที่อยากรู้ว่า<br>ถ้าคืนหนึ่งคุณหลงทางในความฝัน<br>คุณจะเลือกเดินกลับไปทางไหน</p>
+    <button id="start">เข้าไปดูข้างใน</button>
+  </section>
+  <section id="story" class="screen hidden">
+    <div class="meta"><span id="count"></span><span>คุณยังอยู่ตรงนี้</span></div>
+    <p id="scene" class="scene"></p>
+    <div id="choices" class="choices"></div>
+  </section>
+  <section id="result" class="screen hidden">
+    <p class="eyebrow">YOUR SMALL DISCOVERY</p>
+    <h2 id="resultTitle"></h2>
+    <p id="resultText"></p>
+    <button id="again">เดินเข้าไปอีกครั้ง</button>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
