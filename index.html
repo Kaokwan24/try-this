@@ -1,36 +1,35 @@
 <!doctype html>
 <html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ห้องที่ยังเปิดไฟอยู่</title><link rel="stylesheet" href="style.css"></head>
+<title>วันนี้ คุณใช้ชีวิตเป็นคนแบบไหน</title><link rel="stylesheet" href="style.css"></head>
 <body><div class="grain"></div><main>
 <section id="intro" class="paper intro">
-<div class="eyebrow">FIELD NOTE 03:17 / LOST & FOUND</div>
-<div class="stamp">ห้ามเปิด<br>ห้อง 04</div>
-<h1>ห้องที่ยัง<br><em>เปิดไฟอยู่</em></h1>
-<p class="lead">คืนหนึ่ง คุณได้รับข้อความจากคนที่หายไปจากชีวิตคุณนานแล้ว</p>
-<div class="letter">“ถ้ายังจำห้องวาดรูปชั้นสามได้<br>มาหาฉันตอน 03:17<br>และถ้าไฟในห้องยังเปิดอยู่ — อย่าเพิ่งเชื่อเสียงที่เรียกชื่อคุณ”</div>
-<p class="note">ข้างล่างไม่มีใครอยู่<br>ข้างบนมีเสียงเก้าอี้ลากไปบนพื้น</p>
-<button id="start">ขึ้นไปดู <span>↗</span></button>
-<p class="tiny">เรื่องนี้มีคำตอบหลายแบบ แต่ไม่มีคำตอบที่ปลอดภัยทั้งหมด</p>
+<div class="eyebrow">A SMALL DAY / A QUIET QUIZ</div>
+<h1>วันนี้ คุณใช้ชีวิต<br><em>เป็นคนแบบไหน</em></h1>
+<p class="lead">ไม่ใช่แบบทดสอบบุคลิกภาพ และไม่มีคำตอบที่ถูกต้อง</p>
+<div class="letter">“เกมนี้จะไม่ถามว่าคุณเป็นคนแบบไหน<br>เพราะคำตอบที่เราพูดถึงตัวเอง<br>มักสวยกว่าความจริงนิดหน่อย”</div>
+<p class="note">วันนี้เป็นเพียงวันธรรมดาวันหนึ่ง<br>ลองใช้มันดู แล้วเกมจะค่อย ๆ บอกว่าเห็นอะไรในตัวคุณ</p>
+<button id="start">เริ่มวันธรรมดา <span>↗</span></button>
+<p class="tiny">ประมาณ 10–15 นาที · มีเรื่องเล่า มีตัวเลือก และมีพื้นที่ให้ตอบด้วยตัวเอง</p>
 </section>
 
 <section id="game" class="paper hidden">
-<header class="quiz-head"><div><b>ROOM 03</b><span id="chapter">ชั้นสาม / 01</span></div><div id="clock">03:17</div></header>
+<header class="quiz-head"><div><b>ONE ORDINARY DAY</b><span id="chapter">เช้า / 01</span></div><div id="clock">08:17</div></header>
 <div class="progress"><i id="progress"></i></div>
-<div class="story"><p class="scene-tag" id="tag"></p><h2 id="sceneTitle"></h2><p id="storyText"></p>
+<div class="story"><p class="scene-tag" id="tag"></p><h2 id="sceneTitle"></h2><div id="storyText"></div>
 <div id="objectRow" class="objects"></div><div id="choices" class="choices"></div>
-<div id="inputBox" class="free-box hidden"><textarea id="freeText" maxlength="140" placeholder="เขียนสิ่งที่คุณจะตอบกลับไป..."></textarea><button id="freeSubmit">ส่ง <span>↗</span></button></div>
+<div id="inputBox" class="free-box hidden"><textarea id="freeText" maxlength="240" placeholder="เขียนสิ่งที่คุณอยากตอบ..."></textarea><button id="freeSubmit">เก็บคำตอบนี้ไว้ <span>↗</span></button></div>
 </div>
-<aside class="game-aside"><div class="inventory"><span>POCKET</span><div id="bag">ว่าง</div></div><div id="whisper">มีบางอย่างในห้องนี้จำคุณได้</div></aside>
-<footer><span id="memoryCount">เกมจำ: 0</span><span id="hint">03:17 — คุณยังมีเวลา</span></footer>
+<aside class="game-aside"><div class="inventory"><span>POCKET / วันนี้</span><div id="bag">ว่าง</div></div><div id="whisper">เกมยังไม่รู้จักคุณมากพอ</div></aside>
+<footer><span id="memoryCount">เกมจำ: 0</span><span id="hint">08:17 — วันนี้ยังยาว</span></footer>
 </section>
 
 <section id="result" class="paper hidden">
-<div class="result-top"><span>FIELD NOTE CLOSED</span><span id="resultCode"></span></div>
-<p class="result-kicker">คุณกลับออกมาจากห้อง พร้อมคำตอบหนึ่งชุดที่เป็นของคุณ</p>
+<div class="result-top"><span>ONE DAY / CLOSED</span><span id="resultCode"></span></div>
+<p class="result-kicker">หนึ่งวันจบลงแล้ว แต่บางอย่างเกี่ยวกับคุณเพิ่งเริ่มชัด</p>
 <h2 id="resultTitle"></h2><p class="result-sub" id="resultSub"></p><div class="result-line"></div>
 <div class="analysis" id="analysis"></div>
 <div class="evidence"><div><span>สิ่งที่คุณทำ</span><b id="evidenceText"></b></div><div><span>สิ่งที่คุณไม่ทำ</span><b id="missedText"></b></div></div>
 <div class="final-line" id="finalLine"></div>
-<div class="result-actions"><button id="again">กลับเข้าห้องอีกครั้ง <span>↗</span></button><button id="memoryBtn" class="ghost">เปิดกระเป๋าความจำ</button></div>
+<div class="result-actions"><button id="again">ใช้ชีวิตอีกวัน <span>↗</span></button><button id="memoryBtn" class="ghost">เปิดกระเป๋าความจำ</button></div>
 <div id="memoryPanel" class="memory-panel hidden"></div>
 </section></main><script src="script.js"></script></body></html>
