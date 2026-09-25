@@ -1,40 +1,62 @@
 <!doctype html>
 <html lang="th">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ห้องที่ยังเปิดไฟอยู่</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>บันทึกของคนที่คุณเป็น</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="noise"></div>
-<main id="app">
-  <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
-  <section class="intro screen">
-<p class="eyebrow">FIELD NOTE 03:17 / OBJECT STUDY</p>
-<h1>ห้องที่ยัง<br><em>เปิดไฟอยู่</em></h1>
-<p class="lead">เกมเล็ก ๆ ที่ไม่ได้ถามว่าคุณเป็นคนแบบไหน<br>มันแค่ดูว่าเวลาอยู่คนเดียวกับของบางอย่าง<br>คุณจะ <u>ทำอะไรกับมัน</u></p>
-<div class="intro-note">ไม่มีคำตอบถูก<br>และไม่มีใครบอกว่าต้องรีบ</div>
-<button id="start">เข้าไปในห้อง <span>↗</span></button>
+<div class="grain"></div>
+<main>
+<section id="intro" class="paper intro">
+  <div class="eyebrow">PERSONALITY FIELD NOTE / 03:17</div>
+  <div class="stamp">ไม่ใช่แบบทดสอบ<br>ที่อยากได้คำตอบถูก</div>
+  <h1>คุณเป็นคน<br><em>แบบไหนกันนะ</em></h1>
+  <p class="lead">ควิซเล็ก ๆ ที่จะไม่ถามว่าคุณเป็นคนแบบไหน<br>เพราะคำตอบของคุณน่าสนใจกว่าคำจำกัดความอยู่แล้ว</p>
+  <div class="rule"><span>01</span><i></i><span>เริ่มจากเรื่องเล็ก ๆ</span></div>
+  <p class="note">เลือกสิ่งที่คุณ “อยากทำจริง ๆ”<br>ไม่ใช่สิ่งที่คิดว่าควรตอบ</p>
+  <button id="start">เริ่มอ่านตัวเอง <span>↗</span></button>
+  <p class="tiny">ใช้เวลาประมาณ 7–10 นาที · ไม่มีคะแนน · ไม่มีคำตอบผิด</p>
 </section>
-<section id="game" class="screen hidden">
-<header class="game-head"><div><b>ROOM 01</b><span id="roomLabel">ห้องเดิม</span></div><div id="clock">03:17</div></header>
-<div class="room-wrap"><div id="room" class="room">
-<div class="wall"></div><div class="floor"></div>
-<button class="hotspot clock-hit" data-object="clock">นาฬิกา</button>
-<button class="hotspot picture-hit" data-object="picture">ภาพวาด</button>
-<button class="hotspot window-hit" data-object="window">หน้าต่าง</button>
-<button class="hotspot table-hit" data-object="table">โต๊ะ</button>
-<button class="hotspot door-hit" data-object="door">ประตู</button>
-<div class="lamp"></div><div class="table-shape"></div><div class="chair"></div>
-<div class="painting"><span></span></div><div class="window-shape"><i></i><i></i></div><div class="door-shape"><i></i></div>
-</div></div>
-<div class="lower"><aside class="pocket"><span>POCKET</span><div id="bag">ว่างเปล่า</div></aside>
-<section class="log"><div class="log-top"><span id="turn">01</span><span>คลิกสิ่งที่อยากดู</span></div><p id="message"></p><div id="actions" class="actions"></div></section></div>
+
+<section id="quiz" class="paper hidden">
+  <header class="quiz-head">
+    <div><b>FIELD NOTE</b><span id="qnum">01 / 16</span></div>
+    <div id="mood">กำลังสังเกต</div>
+  </header>
+  <div class="progress"><i id="progress"></i></div>
+  <div class="question-area">
+    <p class="scene-tag" id="tag">SCENE 01</p>
+    <h2 id="question"></h2>
+    <p class="context" id="context"></p>
+    <div id="choices" class="choices"></div>
+    <div id="freeBox" class="free-box hidden">
+      <textarea id="freeText" maxlength="160" placeholder="ตอบตามที่คิดจริง ๆ..."></textarea>
+      <button id="freeSubmit">ไปต่อ <span>↗</span></button>
+    </div>
+  </div>
+  <div class="side-note" id="sideNote">เกมจะจำบางอย่างไว้</div>
+  <footer><span id="memoryCount">สิ่งที่เกมจำ: 0</span><span id="turnHint">ไม่ต้องรีบ</span></footer>
 </section>
-<section id="ending" class="screen hidden">
-<p class="eyebrow">FIELD NOTE CLOSED / 03:18</p><h2 id="endingTitle"></h2><div class="ending-rule"></div><p id="endingText"></p><div class="ending-meta" id="endingMeta"></div>
-<button id="again">กลับเข้าไปอีกครั้ง <span>↗</span></button>
+
+<section id="result" class="paper hidden">
+  <div class="result-top"><span>FIELD NOTE CLOSED</span><span id="resultCode">03:18</span></div>
+  <p class="result-kicker">จากสิ่งที่คุณทำ ไม่ใช่สิ่งที่คุณบอกว่าคุณเป็น</p>
+  <h2 id="resultTitle"></h2>
+  <p class="result-sub" id="resultSub"></p>
+  <div class="result-line"></div>
+  <div class="analysis" id="analysis"></div>
+  <div class="evidence">
+    <div><span>สิ่งที่เกมสังเกต</span><b id="evidenceText"></b></div>
+    <div><span>ความขัดแย้งเล็ก ๆ</span><b id="tensionText"></b></div>
+  </div>
+  <div class="final-line" id="finalLine"></div>
+  <div class="result-actions">
+    <button id="again">ลองอีกครั้ง <span>↗</span></button>
+    <button id="memoryBtn" class="ghost">ดูสิ่งที่เกมจำ</button>
+  </div>
+  <div id="memoryPanel" class="memory-panel hidden"></div>
 </section>
 </main>
 <script src="script.js"></script>
