@@ -113,7 +113,7 @@ function showInteraction(s){
 }
 function pick(o){
 const [label,sc,note]=o;Object.keys(sc).forEach(k=>S.score[k]+=sc[k]||0);S.answers.push(label);remember("ฉาก "+(S.n+1)+" — "+label);
-$("#choices").innerHTML='<div class="after-note">'+note+'</div><button class="choice continue">继续今天 ↗</button>';$("#hint").textContent=note;
+$("#choices").innerHTML='<div class="after-note">'+note+'</div><button class="choice continue">แล้ววันก็เดินต่อ ↗</button>';$("#hint").textContent=note;
 $("#choices .continue").onclick=()=>{S.n++;if(S.n>=scenes.length)finish();else render()};
 }
 $("#freeSubmit").onclick=()=>{const v=$("#freeText").value.trim();if(!v)return;S.answers.push(v);S.mem.push("คำตอบที่คุณฝากไว้: "+v);S.n++;finish()};
