@@ -100,16 +100,15 @@ $("#chapter").textContent=s.chapter;$("#clock").textContent=s.time;
 $("#progress").style.width=((S.n+1)/scenes.length*100)+"%";$("#tag").textContent=s.tag;$("#sceneTitle").textContent=s.title;
 $("#storyText").innerHTML=s.text.map(x=>"<p>"+x+"</p>").join("");
 $("#choices").innerHTML="";$("#inputBox").classList.add("hidden");
-const reveal=document.createElement("button");reveal.className="choice story-continue";reveal.textContent="อ่านจบแล้ว ไปต่อ ↗";$("#choices").appendChild(reveal);
-reveal.onclick=()=>showInteraction(s);
-const whispers=["เกมยังไม่ได้ตัดสินคุณจากกาแฟแก้วนั้น","บางเรื่องเล็กมาก จนเรามองข้ามมันไปตอนที่กำลังใช้ชีวิต","คุณไม่จำเป็นต้องอธิบายตัวเองทุกครั้ง","วันนี้ยังเหลืออีกหลายชั่วโมง"];
-$("#whisper").textContent=whispers[S.n%whispers.length];
-}
-function showInteraction(s){
-  $("#choices").innerHTML="";
-  if(s.free){$("#inputBox").classList.remove("hidden");$("#whisper").textContent="คำตอบสุดท้ายไม่ต้องสวย แค่เป็นของคุณ";return}
+if(s.free){
+  $("#inputBox").classList.remove("hidden");
+  $("#whisper").textContent="คำตอบสุดท้ายไม่ต้องสวย แค่เป็นของคุณ";
+}else{
   s.opts.forEach(o=>{const b=document.createElement("button");b.className="choice";b.textContent=o[0];b.onclick=()=>pick(o);$("#choices").appendChild(b)});
-  $("#hint").textContent="สถานการณ์นี้ ไม่มีคำตอบที่ถูก";
+  $("#hint").textContent="เลือกสิ่งที่คุณจะทำ แล้ววันจะเดินต่อ";
+}
+const whispers=["เกมยังไม่ได้ตัดสินคุณจากกาแฟแก้วนั้น","บางเรื่องเล็กมาก จนเรามองข้ามมันไปตอนที่กำลังใช้ชีวิต","คุณไม่จำเป็นต้องอธิบายตัวเองทุกครั้ง","วันนี้ยังเหลืออีกหลายชั่วโมง"];
+if(!s.free) $("#whisper").textContent=whispers[S.n%whispers.length];
 }
 function pick(o){
 const [label,sc,note]=o;Object.keys(sc).forEach(k=>S.score[k]+=sc[k]||0);S.answers.push(label);remember("ฉาก "+(S.n+1)+" — "+label);
